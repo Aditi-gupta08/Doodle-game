@@ -27,8 +27,6 @@ function generate_room_code() {
     document.getElementById('new_room_code_div').style.display = 'block';
     document.getElementById('new_room_code').innerText = r_code;
     document.getElementById('room').value = r_code;
-
-    console.log(r_code);
 }
 
 function randomWord()

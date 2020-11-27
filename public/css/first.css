@@ -2,11 +2,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@500&display=swap');
 body {
-    background-image: url("../images/bg-2.png");
+    background-image: url("../images/front-page.png");
     background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .main {

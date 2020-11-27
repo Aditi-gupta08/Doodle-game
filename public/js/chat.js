@@ -22,7 +22,6 @@ function randomWord() {
 
 // 
 function getWord() {
-    console.log("aa");
     choosed_word = randomWord();
     let mesg = `Your word : \'${choosed_word}\'`;
     result.innerText = '';
@@ -44,7 +43,6 @@ socket.on('roomUsers', ({ room, users }) => {
 
 // Message from server
 socket.on('b_message', message => {
-    /* console.log(message); */
 
     outputMessage(message);
 
@@ -64,9 +62,6 @@ socket.on('message', (arr, user) => {
     else
         isCorrect = false;
 
-    console.log(arr.msg, arr.wordd);
-    console.log(isCorrect);
-
     outputguessedWord(arr.msg, isCorrect, user);
 
     // Scroll down
@@ -81,7 +76,6 @@ socket.on('clear_word_and_result', msg => {
 
 socket.on('word_tell', msg => {
     word.innerText = msg;
-    console.log(msg);
 });
 
 

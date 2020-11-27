@@ -94,15 +94,11 @@ function randomWord()
     return rand_word;
 }
 
-/* console.log(randomWord(1));
-console.log(randomWord(2));
-console.log(randomWord(3)); */
 
 /* 
 function playGame(round ) {
     var sec = 5;
     let word = randomWord(round);
-    console.log(`Your word is ${word}`);
     let cnt = 0;
     
     function timerr() {
@@ -134,7 +130,6 @@ function startGame() {
 function startGame() {
     let word = randomWord(1);
     document.getElementById('word').innerText = `Your word is ${word}`;
-    console.log(`Your word is ${word}`);
 }
 
 

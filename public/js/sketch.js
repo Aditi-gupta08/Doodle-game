@@ -45,7 +45,10 @@ function stopPainting() {
 function sketch(event) {
     if (!paint) return;
     ctx.beginPath();
-    ctx.lineWidth = 5;
+    if(line_color != 'black')
+        ctx.lineWidth = 5;
+    else
+        ctx.lineWidth = 30;
 
     // Sets the end of the lines drawn 
     // to a round shape. 
@@ -56,7 +59,6 @@ function sketch(event) {
     // The cursor to start drawing 
     // moves to this coordinate 
     ctx.moveTo(coord.x, coord.y);
-    // console.log(coord.x, coord.y)
     // The position of the cursor 
     // gets updated as we move the 
     // mouse around. 
@@ -90,7 +92,11 @@ socket.on('clearCanvas', value => {
 socket.on('positions', data => {
 
     ctx.beginPath();
-    ctx.lineWidth = 10;
+
+    if(line_color != 'black')
+        ctx.lineWidth = 10;
+    else
+        ctx.lineWidth = 30;
     // ctx.moveTo(0, 0)
     // // Sets the end of the lines drawn 
     // // to a round shape. 

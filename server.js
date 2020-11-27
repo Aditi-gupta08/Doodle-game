@@ -50,10 +50,7 @@ io.on('connection', socket => {
     });
 
     socket.on('correctlyGuessed', (usrName) => {
-        console.log('pp', usrName);
-        console.log("aa");
         const user = getCurrentUser(socket.id);
-        console.log(user);
         socket.to(user.room).emit('b_message', formatMessage(botName, `Word is correctly guessed by ${usrName}`));
     });
 
@@ -70,9 +67,6 @@ io.on('connection', socket => {
             wordd
         }
 
-        console.log(socket.id);
-        console.log(user.room);
-        console.log(arr);
         io.to(user.room).emit('message', arr, user);
     });
 
@@ -80,12 +74,10 @@ io.on('connection', socket => {
     socket.on('wordTelling', (msg, wordd) => {
         const user = getCurrentUser(socket.id);
         // var words = JSON.parse(fs.readFileSync(word_path));
-        // console.log(words);
-        console.log(user)
+
         io.to(user.room).emit('clear_word_and_result', '');
         io.to(socket.id).emit('word_tell', msg);
 
-        console.log(wordd);
 
         words[user.room] = wordd;
         // fs.writeFileSync(word_path, JSON.stringify(words, null, 2));
@@ -97,11 +89,8 @@ io.on('connection', socket => {
     // Drawing --------
     // recieves positions of canvas from client
     socket.on('positions', data => {
-            // console.log("dd ")
             //sends positions of canvas to all other clients
             const user = getCurrentUser(socket.id);
-            // console.log(user)
-            // console.log(all)
             socket.to(user.room).broadcast.emit('positions', data)
         })
 
@@ -137,7 +126,7 @@ io.on('connection', socket => {
 })
 
 
-const PORT = process.env.PORT || 4000;
+const PORT = 4000 || process.env.PORT;
 
 server.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
