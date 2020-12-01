@@ -90,7 +90,11 @@ io.on('connection', socket => {
         socket.to(user.room).broadcast.emit('clearCanvas', value)
     })
 
-    socket.on('drawing', (data) => socket.broadcast.emit('drawing', data));
+    socket.on('drawing', (data) => 
+    {   
+        const user = getCurrentUser(socket.id);
+        socket.to(user.room).broadcast.emit('drawing', data);
+    })
 
     // Runs when client disconnects
     socket.on('disconnect', () => {
@@ -112,7 +116,7 @@ io.on('connection', socket => {
 })
 
 
-const PORT = process.env.PORT || 5000 ;
+const PORT = process.env.PORT || 3000 ;
 
 server.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
