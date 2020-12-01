@@ -21,7 +21,8 @@ function clearAll() {
 
 // set canvas width and height
 function resize() {
-    ctx.canvas.width = window.innerWidth - 980;
+
+    ctx.canvas.width = window.innerWidth - 780;
     ctx.canvas.height = window.innerHeight - 280;
 }
 

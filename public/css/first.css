@@ -26,14 +26,14 @@ body {
 }
 
 .right {
-    margin-top: 11vh;
+    margin-top: 16vh;
     font-family: 'Itim', cursive;
-    font-size: 30px;
+    font-size: 20px;
 }
 
 .join-main {
     width: 50%;
-    margin: 30% 0% 10% 21%;
+    margin: 30% 0% 0% 21%;
     padding: 20px 0px;
     border-radius: 10px;
     background: #9c9ead45;

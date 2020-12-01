@@ -20,7 +20,7 @@ body {
 .head {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-gap: 10px 140px;
+    grid-gap: 10px 95px;
     margin-bottom: 20px;
     padding: 0px 30px;
 }
@@ -34,22 +34,27 @@ body {
 }
 
 .main {
-    display: grid;
+    /* display: grid;
+    margin-top: 25px;
     grid-template-columns: 1fr 2fr 1fr;
-    grid-gap: 10px 25px;
+    grid-gap: 10px 25px; */
+
+    display: flex;
+    justify-content: space-around;
 }
 
 .main > div{
-    height: 616px;
+    height: 73vh;
 }
 
 .main .chat-messages{
-    height: 590px;
+    height: 68vh;
 }
 
-/* .main .chat-form-container{
-    height: 600px;
-} */
+.main .chat-form-container{
+    height: 73vh;
+    width: 20vw;
+}
 
 #gameName {
     font-size: 70px;
@@ -57,10 +62,10 @@ body {
 }
 
 #word {
-    font-size:30px ;
+    font-size: 26px ;
     border: 2px solid black;
     font-family: 'Itim', cursive;
-    padding-left: 30px;
+    padding: 5px;
 }
 
 .heading{

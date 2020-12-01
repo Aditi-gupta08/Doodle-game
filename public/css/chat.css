@@ -67,6 +67,7 @@ a {
     color: #fff;
     padding: 20px 20px 60px;
     overflow-y: scroll;
+    width: 15vw;
 }
 
 .chat-sidebar h2 {

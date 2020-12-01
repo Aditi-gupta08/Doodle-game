@@ -18,8 +18,8 @@
     <div class="cont">
 
         <div class="head" class="fluid">
-            <span class="timer"> </span>
-            <span id="result"></span>
+            <div class="timer"> </div>
+            <div id="result"></div>
             <h1 id="gameName"> DOODLE </h1>
             <button onclick="getWord()" id="getWord" style="height: 50px; width: 150px;"> Get Word </button>
             <span id="word"> Your Word : </span>
@@ -65,12 +65,15 @@
 
 
             <div class="chat-form-container bg-dark">
-                <div class="chat-messages"></div>
+            
+                <div class="chat-messages"></div>    
                 <form id="chat-form">
+
                     <input id="msg" type="text" placeholder="Enter Message" required autocomplete="off" />
                     <button class="btn"><i class="fas fa-paper-plane"></i> Send</button>
                 </form>
             </div>
+
         </div>
 
     </div>
