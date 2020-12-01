@@ -58,8 +58,6 @@ io.on('connection', socket => {
     // Listen for chat Message
     socket.on('chatMessage', (msg) => {
         const user = getCurrentUser(socket.id);
-        // var tmpp = JSON.parse(fs.readFileSync(word_path));
-        // var wordd = tmpp[0][user.room];
 
         let wordd = words[user.room];
         var arr = {
@@ -73,38 +71,26 @@ io.on('connection', socket => {
 
     socket.on('wordTelling', (msg, wordd) => {
         const user = getCurrentUser(socket.id);
-        // var words = JSON.parse(fs.readFileSync(word_path));
 
         io.to(user.room).emit('clear_word_and_result', '');
         io.to(socket.id).emit('word_tell', msg);
 
 
         words[user.room] = wordd;
-        // fs.writeFileSync(word_path, JSON.stringify(words, null, 2));
 
         io.to(user.room).emit('b_message', formatMessage(botName, `${user.username} is drawing`));
     });
 
 
     // Drawing --------
-    // recieves positions of canvas from client
-    socket.on('positions', data => {
-            //sends positions of canvas to all other clients
-            const user = getCurrentUser(socket.id);
-            socket.to(user.room).broadcast.emit('positions', data)
-        })
-
-        //recieves brush color
-    socket.on('color', newcolor => {
-            const user = getCurrentUser(socket.id);
-            socket.to(user.room).broadcast.emit('color', newcolor)
-        })
 
         // receives that user wants to clear screen
     socket.on('clearCanvas', value => {
         const user = getCurrentUser(socket.id);
         socket.to(user.room).broadcast.emit('clearCanvas', value)
     })
+
+    socket.on('drawing', (data) => socket.broadcast.emit('drawing', data));
 
     // Runs when client disconnects
     socket.on('disconnect', () => {
@@ -126,7 +112,7 @@ io.on('connection', socket => {
 })
 
 
-const PORT = process.env.PORT || 4000 ;
+const PORT = process.env.PORT || 5000 ;
 
 server.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);

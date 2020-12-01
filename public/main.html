@@ -43,21 +43,18 @@
                 <div>
                     <div id="colors_div">
                         <div class="heading m-2"> Colors : </div>
-                        <div onclick="changeColor('white')" class="colors" style="background-color: white;"></div>
-                        <div onclick="changeColor('yellow')" class="colors" style="background-color: yellow;"></div>
-                        <div onclick="changeColor('orange')" class="colors" style="background-color: orange;"></div>
-                        <div onclick="changeColor('red')" class="colors" style="background-color: red;"></div>
-                        <div onclick="changeColor('green')" class="colors" style="background-color: green;"></div>
-                        <div onclick="changeColor('blue')" class="colors" style="background-color: blue;"></div>
-                        <div onclick="changeColor('brown')" class="colors" style="background-color: brown;"></div>
-                        <div onclick="changeColor('black')" class="colors" style="background-color: black;"></div>
+                        <div class="colors white" style="background-color: white;"></div>
+                        <div class="colors yellow" style="background-color: yellow;"></div>
+                        <div class="colors orange" style="background-color: orange;"></div>
+                        <div class="colors red" style="background-color: red;"></div>
+                        <div class="colors green" style="background-color: green;"></div>
+                        <div class="colors blue" style="background-color: blue;"></div>
+                        <div class="colors brown" style="background-color: brown;"></div>
                     </div>
-                
-        
                     
                     <div id="options">
-                        <div class="heading m-2 opt" onclick="clearAll()"> Clear all </div>
-                        <div class="heading m-2 opt" onclick="changeColor('black')"> Eraser </div>
+                        <div class="clear blue heading m-2 opt" > Clear all </div>
+                        <div class="eraser black heading m-2 opt "> Eraser </div>
                     </div>
                 </div>
             </div>
@@ -89,7 +86,7 @@
     <script src="/socket.io/socket.io.js"></script>
     <script src="./js/chat.js"></script>
 
-    <script src="./js/sketch.js"></script>
+    <script src="./js/drawing.js"></script>
 
 </body>
 
